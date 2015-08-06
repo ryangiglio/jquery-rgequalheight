@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <title>jquery.rgequalheight example</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .content-wrapper {
+      width: 92%;
+
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 2em;
+    }
+
+    p {
+      padding: 20px;
+      
+      border: 1px solid #999;
+    }
+    .two-up p {
+      width: 45%;
+
+      margin: 0 2.5%;
+
+      float: left;
+    }
+
+    @media screen and ( min-width: 768px ) {
+      .four-up p {
+        width: 20%;
+
+        margin: 0 2.5%;
+
+        float: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <h1>jquery.rgequalheight example</h1>
+    <section class="two-up">
+      <h2>Two 50/50 Elements</h2>
+      
+      <p>Slow-carb trust fund vegan salvia fingerstache Pitchfork, plaid post-ironic Wes Anderson. Photo booth roof party Kickstarter hoodie, beard swag stumptown lomo 3 wolf moon actually messenger bag aesthetic vinyl flannel. Chia migas stumptown fashion axe, church-key fingerstache cray small batch butcher mustache photo booth.</p>
+      <p>Synth put a bird on it XOXO, slow-carb kitsch beard +1 taxidermy Austin. Scenester you probably haven't heard of them Kickstarter, forage butcher paleo PBR&B gastropub street art drinking vinegar. Drinking vinegar four loko ugh asymmetrical, farm-to-table lumbersexual cornhole Godard banjo. Swag actually kogi, selfies High Life Bushwick pour-over Carles Austin iPhone. Occupy sriracha Vice, farm-to-table meditation tote bag narwhal Helvetica cardigan fanny pack skateboard cornhole XOXO next level. Pitchfork put a bird on it beard, readymade bitters you probably haven't heard of them four dollar toast occupy meditation. Photo booth Bushwick leggings, mumblecore deep v banh mi irony hashtag.</p>
+
+      <br clear="left" />
+    </section>
+
+    <section class="four-up stack">
+      <h2>Four elements that stack below 768px</h2>
+      
+      <p>Williamsburg tofu mustache, chillwave Carles +1 church-key literally mlkshk irony blog cronut. Blog fixie food truck flannel banjo Vice, salvia DIY bitters pug Williamsburg letterpress. Literally PBR you probably haven't heard of them, beard Odd Future lo-fi High Life Bushwick McSweeney's listicle. Master cleanse art party chia Etsy, pop-up semiotics meggings Odd Future XOXO. Tote bag Intelligentsia cronut, Pitchfork selfies mlkshk narwhal direct trade farm-to-table asymmetrical. Truffaut narwhal skateboard fixie cred disrupt whatever, letterpress mumblecore. Blog Banksy banh mi, sustainable American Apparel wolf 3 wolf moon readymade typewriter.</p>
+      <p>Actually art party DIY meditation small batch. Master cleanse hashtag narwhal bespoke, sustainable McSweeney's twee. Pinterest photo booth vinyl, Tumblr before they sold out meh aesthetic mustache DIY quinoa. Banh mi Portland artisan asymmetrical sustainable mustache cronut. Roof party skateboard forage, keffiyeh tattooed fap bespoke.</p>
+      <p>Biodiesel DIY Pitchfork, Portland banjo organic cronut sustainable health goth mixtape Vice sriracha artisan. Pork belly art party pickled, leggings polaroid swag scenester dreamcatcher bespoke. Gastropub sartorial umami direct trade fashion axe.</p>
+      <p>Squid fashion axe Kickstarter Tumblr wayfarers. Narwhal photo booth skateboard cliche lumbersexual food truck pork belly, Thundercats bitters Odd Future try-hard Kickstarter artisan Williamsburg. Banh mi mumblecore wolf, Shoreditch Wes Anderson Intelligentsia McSweeney's Pinterest crucifix YOLO meh hashtag. Cray quinoa retro, mixtape cornhole Pitchfork skateboard raw denim leggings. Brooklyn wolf kale chips selfies Pitchfork, direct trade tilde vinyl keffiyeh paleo freegan aesthetic ennui. </p>
+      <br clear="left" />
+    </section>
+  </div>
+
+  <script src="vendor/jquery-1.11.3.min.js"></script>
+  <script src="src/jquery.rgequalheight.js"></script>
+
+  <script>
+    $('.two-up p').rgequalheight();
+
+    $('.four-up p').rgequalheight({
+      minWidthBreakpoint: 768
+    });
+  </script>
+</body>
+</html>
