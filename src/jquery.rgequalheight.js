@@ -37,6 +37,9 @@
         // var to store the setTimeout ID used to throttle window resize events
         this.windowResizeTriggerTimeout = null;
       }
+
+      // Call the callback
+      this.callback();
     },
 
     // Remove plugin instance completely
