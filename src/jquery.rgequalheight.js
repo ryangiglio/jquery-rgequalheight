@@ -25,12 +25,18 @@
 
     init: function () {
       this.buildCache();
-      this.bindEvents();
 
+      // Equalize heights depending on window size
       this.windowResizeHandler();
 
-      // var to store the setTimeout ID used to throttle window resize events
-      this.windowResizeTriggerTimeout = null;
+      // If the plugin should be responsive
+      if ( this.options.responsive ) { 
+        // Bind events that re-trigger the resize on window resize
+        this.bindEvents();
+
+        // var to store the setTimeout ID used to throttle window resize events
+        this.windowResizeTriggerTimeout = null;
+      }
     },
 
     // Remove plugin instance completely
@@ -186,10 +192,12 @@
   $.fn.rgequalheight.defaults = {
     // Set as true to set min-height instead of height
     useMinHeight: false,
+    // Update heights when the window resizes
+    responsive: true,
     // Minimum pixel width to equalize columns at (useful for responsive designs)
     minWidthBreakpoint: null, 
     // ms of throttle to wait between window resize and element resize. This stops the browser from re-calculating every pixel of resize
-    windowResizeThrottle: 100
+    windowResizeThrottle: 100,
   };
 
 })( jQuery, window, document );
